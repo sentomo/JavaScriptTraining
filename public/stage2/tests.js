@@ -42,7 +42,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
       var element = document.getElementById('mediumseagreen');
-      element.textContent = element.style{color: limegreen};
+      element.textContent = element.style("color: limegreen");
 
 
       expect(element).to.have.property(
