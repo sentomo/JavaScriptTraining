@@ -26,8 +26,6 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // 変更した DOM 要素は element 変数に代入してください。
       var element = document.getElementById('chocolate');
       element.textContent = element.textContent + element.textContent;
-
-
       expect(element).to.have.property(secret('vq'), secret('pubpbyngr'));
       expect(element).to.have.deep.property(
         secret('grkgPbagrag'), '\uD83C\uDF6B\uD83C\uDF6B');
@@ -41,8 +39,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = document.getElementById('mediumseagreen');
-      element.textContent = element.style("color: limegreen");
+      var element = document.getElementsByClassName('mediumseagreen')[0];
+      element.style.backgroundColor = 'limegreen';
 
 
       expect(element).to.have.property(
@@ -60,7 +58,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementsByClassName('turquoise')[0];
+      element.style.opacity = 0.5;
 
 
       expect(element).to.have.property(
@@ -78,7 +77,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は element 変数に代入してください。
-      var element = 'change me!';
+      var element = document.getElementsByTagName('blockquote')[0];
+      element.style.transform = 'rotate(10deg)';
 
 
       expect(element).to.have.property(
@@ -99,7 +99,9 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // なお、上に 20px 移動させる方法は複数ありますが、今回は top 属性を
       // 使う方法を使ってください。
-      var element = 'change me!';
+      var element = document.querySelector('li[data-js-training="blueviolet"]');
+      element.style.position = 'relative';
+      element.style.top = '-20px';
 
 
       expect(element).to.have.deep.property(
@@ -129,9 +131,9 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // var $element = $('#brown');
       // $element.text($element.text() + $element.text());
-      var $element = 'change me!';
-
-
+      var $element = $('#brown');
+      $element.text($element.text() + $element.text());
+      
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.id(secret('oebja'));
       expect($element).to.have.text('\uD83C\uDF63\uD83C\uDF63');
@@ -142,8 +144,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
-
+      var $element = $('#darkorange');
+      $element.text($element.text() + $element.text());
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.id(secret('qnexbenatr'));
@@ -153,13 +155,11 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // http://api.jquery.com/category/manipulation/
     });
 
-
     it('9 番の要素の背景色を jQuery を使って "mediumseagreen" に変更する', function() {
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
-
+      var $element = $('.limegreen').css({ backgroundColor: 'mediumseagreen' });
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.class(secret('yvzrterra'));
@@ -170,12 +170,11 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // http://api.jquery.com/category/css/
     });
 
-
     it('10 番の要素を jQuery を使って 50% の透明度に変更する', function() {
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+      var $element = $('.mediumturquoise').css({ opacity: '0.5' });
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -188,7 +187,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       // ここにコードを記述してください。
       // 変更した DOM 要素は $element 変数に代入してください。
-      var $element = 'change me!';
+      var $element = $('p').css({ transform: 'rotate(10deg)' });
 
 
       expect($element).to.be.instanceof(jQuery);
@@ -207,7 +206,8 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       //
       // なお、上に 20px 移動させる方法は複数ありますが、今回は top 属性を
       // 使う方法を使ってください。
-      var $element = 'change me!';
+      var $element = $('li[data-js-training="darkorchid"]').css({ position: 'relative' });
+      var $element = $('li[data-js-training="darkorchid"]').css({ top: '-20px' });
 
 
       expect($element).to.be.instanceof(jQuery);
