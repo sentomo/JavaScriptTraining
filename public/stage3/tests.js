@@ -13,6 +13,9 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
       // element.removeChild(ghost);
 
 
+      var element = document.querySelector('#firebrick');
+      var ghost = document.querySelector('.firebrick-ghost');
+      element.removeChild(ghost);
       var firebrick = document.getElementById('firebrick');
       expect(firebrick.childNodes.length).to.equal(1);
       expect(firebrick).to.have.property('textContent', '1');
@@ -23,6 +26,9 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
+      var element = document.querySelector('#chocolate');
+      var invader = document.querySelector('.chocolate-space-invader');
+      element.removeChild(invader);
 
       var darkorange = document.getElementById('chocolate');
       expect(darkorange.childNodes.length).to.equal(1);
@@ -34,6 +40,14 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
+      var element = document.querySelector('.mediumseagreen');
+      var ghosts = document.querySelectorAll('.mediumseagreen-ghosts');
+      var ghost;
+
+      for(var i=0, len=ghosts.length; i<len; i++){
+        ghost = ghosts[i];
+        element.removeChild(ghost);
+      }
 
       var darkorange = document.querySelector('.mediumseagreen');
       expect(darkorange).to.have.property('textContent', '3\uD83C\uDF3F');
