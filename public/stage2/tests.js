@@ -163,8 +163,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
 
       expect($element).to.be.instanceof(jQuery);
       expect($element).to.have.class(secret('yvzrterra'));
-      expect($element).to.have.css(
-        secret('onpxtebhaq-pbybe'), normalizeColor('mediumseagreen'));
+      expect($element).to.have.css(secret('onpxtebhaq-pbybe'), normalizeColor('mediumseagreen'));
 
       // 参考情報
       // http://api.jquery.com/category/css/
@@ -207,7 +206,7 @@ describe('ステージ2（意図した通りに DOM 要素の属性・テキス�
       // なお、上に 20px 移動させる方法は複数ありますが、今回は top 属性を
       // 使う方法を使ってください。
       var $element = $('li[data-js-training="darkorchid"]').css({ position: 'relative' });
-      var $element = $('li[data-js-training="darkorchid"]').css({ top: '-20px' });
+      $element = $('li[data-js-training="darkorchid"]').css({ top: '-20px' });
 
 
       expect($element).to.be.instanceof(jQuery);
