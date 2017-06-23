@@ -60,7 +60,8 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // 上の elementToAdd を追加するコードをここに記述してください。
 
-
+      document.querySelector('.turquoise').append(elementToAdd);
+      //document.querySelector('.turquoise').appendChild(elementToAdd);
       var turquoise = document.querySelector('.turquoise');
       expect(turquoise.childNodes.length).to.equal(2);
       expect(turquoise).to.have.deep.property('childNodes[0].textContent', '4');
@@ -71,10 +72,11 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
     it('5 番の青色の要素の最初に要素を追加する', function() {
       var elementToAdd = document.createElement('span');
       elementToAdd.textContent = '\uD83D\uDC1F';
-
-      // 上の elementToAdd を、5 番の青色の要素の最初に追加するコードを
-      // ここに記述してください。
-
+      
+      // 上の elementToAdd を、5 番の青色の要素の最初に追加するコードをここに追加してください
+      var element = document.querySelector('blockquote');
+      //element.prepend(elementToAdd);
+      element.insertBefore(elementToAdd, element.childNodes[0]);
 
       var blockquote = document.querySelector('blockquote');
       expect(blockquote.childNodes.length).to.equal(2);
@@ -94,6 +96,7 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
       //
       // $('.brown-ghost').remove();
 
+      $('.brown-ghost').remove();
 
       var $brown = $('#brown');
       expect($brown.children()).to.have.length(0);
@@ -105,6 +108,7 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
+      $('.darkorange-space-invader').remove();
 
       var $darkorange = $('#darkorange');
       expect($darkorange.children()).to.have.length(0);
@@ -119,6 +123,7 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // ここにコードを記述してください。
 
+      $('.limegreen-ghosts').remove();
 
       var $limegreen = $('.limegreen');
       expect($limegreen).to.have.text('8\uD83C\uDF3F');
@@ -130,6 +135,7 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // 上の $elementToAdd を追加するコードをここに記述してください。
 
+      $('.mediumturquoise').append($elementToAdd);
 
       var $mediumturquoise = $('.mediumturquoise');
       expect($mediumturquoise.children()).to.have.length(1);
@@ -142,6 +148,7 @@ describe('ステージ3（意図した通りに DOM 要素の構造を変更で�
 
       // 上の $elementToAdd を追加するコードをここに記述してください。
 
+      $('p').prepend($elementToAdd);
 
       var $p = $('p');
       expect($p.children()).to.have.length(1);
