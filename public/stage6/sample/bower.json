@@ -1,0 +1,23 @@
+{
+  "name": "sentomo-stage6",
+  "homepage": "https://github.com/sentomo/JavaScriptTraining",
+  "description": "sentomo-stage6:JavaScriptTraining sentomo",
+  "main": "",
+  "keywords": [
+    "sentimo",
+    "JavaScriptTrainin",
+    "stage6"
+  ],
+  "authors": [
+    "sentomo"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
